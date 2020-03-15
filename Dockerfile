@@ -14,3 +14,4 @@ RUN apt-get update \
   && mv composer.phar /usr/local/bin/composer
 
 WORKDIR /var/www/html/vuesplash
+

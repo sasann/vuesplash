@@ -18,7 +18,7 @@
     </ul>
     <div class="panel" v-show="tab === 1">
       <form class="form" @submit.prevent="login">
-        <label for="login-email">Email</label>
+        <label for="login-password">Email</label>
         <input
           type="text"
           class="form__item"
@@ -94,16 +94,11 @@ export default {
   },
   methods: {
     async login() {
-      // authストアのloginアクションを呼び出す
       await this.$store.dispatch("auth/login", this.loginForm);
-
-      // トップページに移動する
       this.$router.push("/");
     },
     async register() {
       await this.$store.dispatch("auth/register", this.registerForm);
-
-      // トップページに移動する
       this.$router.push("/");
     }
   }

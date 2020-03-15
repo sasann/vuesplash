@@ -3,13 +3,13 @@
 namespace Tests\Feature;
 
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class RegisterApiTest extends TestCase
 {
-     use RefreshDatabase;
+    use RefreshDatabase;
 
     /**
      * @test
@@ -33,4 +33,3 @@ class RegisterApiTest extends TestCase
             ->assertJson(['name' => $user->name]);
     }
 }
-

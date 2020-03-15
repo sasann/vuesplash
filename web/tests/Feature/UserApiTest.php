@@ -3,21 +3,23 @@
 namespace Tests\Feature;
 
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserApiTest extends TestCase
 {
     use RefreshDatabase;
-     public function setUp(): void
+
+    public function setUp(): void
     {
         parent::setUp();
 
         // テストユーザー作成
         $this->user = factory(User::class)->create();
     }
-     /**
+
+    /**
      * @test
      */
     public function should_ログイン中のユーザーを返却する()
@@ -30,6 +32,7 @@ class UserApiTest extends TestCase
                 'name' => $this->user->name,
             ]);
     }
+
     /**
      * @test
      */
